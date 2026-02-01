@@ -7,19 +7,19 @@ window.addEventListener("load", () => {
 
   bgMusic.volume = 0.3;
 
-  // ENTER button works here
+  // ENTER button click
   enterBtn.addEventListener("click", () => {
     intro.style.display = "none";
     content.classList.remove("hidden");
     bgMusic.play().catch(() => {});
   });
 
-  // mute background when voice plays
+  // When voice plays → mute background
   voiceNote.addEventListener("play", () => {
     bgMusic.volume = 0;
   });
 
-  // restore background
+  // When voice pauses or ends → restore background
   voiceNote.addEventListener("pause", () => {
     bgMusic.volume = 0.3;
   });
@@ -28,3 +28,4 @@ window.addEventListener("load", () => {
     bgMusic.volume = 0.3;
   });
 });
+
