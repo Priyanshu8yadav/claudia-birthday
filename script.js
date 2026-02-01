@@ -1,23 +1,30 @@
-const bgMusic = document.getElementById("bgMusic");
-const enterBtn = document.getElementById("enterBtn");
-const content = document.getElementById("content");
-const intro = document.querySelector(".intro");
-const voiceNote = document.getElementById("voiceNote");
+window.addEventListener("load", () => {
+  const bgMusic = document.getElementById("bgMusic");
+  const voiceNote = document.getElementById("voiceNote");
 
-bgMusic.volume = 0.25;
+  bgMusic.volume = 0.3;
 
-enterBtn.addEventListener("click", () => {
-  bgMusic.play().catch(() => {});
-  intro.style.display = "none";
-  content.classList.remove("hidden");
+  // Called from Enter button
+  window.enterSite = function () {
+    document.querySelector(".intro").style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+    bgMusic.play().catch(() => {});
+  };
+
+  // Mute background when voice plays
+  voiceNote.addEventListener("play", () => {
+    bgMusic.volume = 0;
+  });
+
+  // Restore background when voice stops
+  voiceNote.addEventListener("pause", () => {
+    bgMusic.volume = 0.3;
+  });
+
+  voiceNote.addEventListener("ended", () => {
+    bgMusic.volume = 0.3;
+  });
 });
 
-voiceNote.addEventListener("play", () => {
-  bgMusic.pause();
-});
-
-voiceNote.addEventListener("ended", () => {
-  bgMusic.play().catch(() => {});
-});
 
 
