@@ -1,9 +1,16 @@
-function enterSite() {
-  document.querySelector('.intro').style.display = 'none';
-  document.getElementById('content').classList.remove('hidden');
-  document.getElementById('bgMusic').play();
-}
+const bgMusic = document.getElementById("bgMusic");
+const voiceNote = document.getElementById("voiceNote");
+const enterBtn = document.getElementById("enterBtn");
+const playVoiceBtn = document.getElementById("playVoice");
+const content = document.getElementById("content");
+const intro = document.querySelector(".intro");
 
-function playVoice() {
-  document.getElementById('voiceNote').play();
-}
+enterBtn.addEventListener("click", () => {
+  bgMusic.play().catch(() => {});
+  intro.style.display = "none";
+  content.classList.remove("hidden");
+});
+
+playVoiceBtn.addEventListener("click", () => {
+  voiceNote.play();
+});
