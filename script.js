@@ -1,7 +1,5 @@
 const bgMusic = document.getElementById("bgMusic");
-const voiceNote = document.getElementById("voiceNote");
 const enterBtn = document.getElementById("enterBtn");
-const playVoiceBtn = document.getElementById("playVoice");
 const content = document.getElementById("content");
 const intro = document.querySelector(".intro");
 
@@ -10,4 +8,3 @@ enterBtn.addEventListener("click", () => {
   intro.style.display = "none";
   content.classList.remove("hidden");
 });
-
