@@ -11,6 +11,3 @@ enterBtn.addEventListener("click", () => {
   content.classList.remove("hidden");
 });
 
-playVoiceBtn.addEventListener("click", () => {
-  voiceNote.play();
-});
