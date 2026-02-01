@@ -20,3 +20,4 @@ voiceNote.addEventListener("ended", () => {
   bgMusic.play().catch(() => {});
 });
 
+
